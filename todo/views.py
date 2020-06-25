@@ -10,7 +10,10 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    return render(request, 'todo/home.html')
+    if request.user.is_authenticated:
+        return render(request, 'todo/currenttodos.html')
+    else:
+        return render(request, 'todo/home.html')
 
 
 def signupuser(request):

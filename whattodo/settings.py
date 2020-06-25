@@ -1,3 +1,4 @@
+from .secret_settings import *
 """
 Django settings for whattodo project.
 
@@ -20,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h0wzoyv2w*58t6^(^#e(vkgxpl-5lnu7$0r9(^y2ab-a1y8a2d'
+SECRET_KEY = secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.whatsdoin.today']
 
 
 # Application definition
@@ -121,3 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("No local file availible, you must be on production")

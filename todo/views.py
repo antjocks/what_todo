@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     if request.user.is_authenticated:
-        return redirect('currenttodos')
+        return render(request, 'todo/currenttodos.html')
     else:
         return render(request, 'todo/home.html')
 

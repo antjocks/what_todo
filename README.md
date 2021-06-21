@@ -1,7 +1,7 @@
 #what.Todo
 
 ## Overview
-[what.Todo](https://whatsdoin.today)
+[whatsdoin.today](https://whatsdoin.today)
 
 This is a website I built using Django and HTML and Bootstrap for styling.  
 
